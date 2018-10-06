@@ -29,8 +29,14 @@ function login(){
         var errorCode = error.code;
         var errorMessage = error.message;
 
-        window.alert("error");
+        window.alert("asd");
         // ...
+    });
+
+    firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+            window.location = 'paypalButton.html'; //After successful login, user will be redirected to home.html
+        }
     });
 }
 
