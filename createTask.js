@@ -1,46 +1,70 @@
-// TODO: Replace with your project's config object. You can find this
-// by navigating to your project's console overview page
-// (https://console.firebase.google.com/project/your-project-id/overview)
-// and clicking "Add Firebase to your web app"
-var config = {
-    apiKey: "AIzaSyCT_YPaoJrDhHakq7DacUsGJEwXMUimktU",
-    authDomain: "motiv8-27fda.firebaseapp.com",
-    databaseURL: "https://motiv8-27fda.firebaseio.com",
-    projectId: "motiv8-27fda",
-    storageBucket: "motiv8-27fda.appspot.com",
-    messagingSenderId: "42771272863"
-};
-firebase.initializeApp(config);
+<html>
+	<head>
+			<title>Motiv8</title>
+			<link rel="stylesheet" type="text/css"href="style.css">
+	</head>
+	<body>
+		<div id="myDiv">
+			<h1>Your Tasks</h1>
+			<div class="task-contain">
+				<ul id="list" class="form">
+					<li class="text-std">potatoes</li>
+				</ul>
+			</div>
+			<button class="button" style="width:100px;margin:30px" onclick="hideFirst()">Create task</a></button>
+		</div>
 
 
-// Reference to the recommendations object in your Firebase database
-var tasks = firebase.database().ref("/tasks");
+		<script>
+			function hideFirst() {
+			var x = document.getElementById("myDiv");
+			var y = document.getElementById("baseform")
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			}
+			else {
+				x.style.display = "none";
+				y.style.display = "block";
+			}
+		}
+		</script>
+	</body>
 
-// Save a new recommendation to the database, using the input in the form
-var submitTask = function () {
+	<html>
+	<head>
+	<title>Motiv8</title>
+            <link rel="stylesheet" type="text/css"href="style.css">
+		<!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+    	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    	<!-- Load the Firebase library before loading the body. -->
+	    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
 
-  // Get input values from each of the form elements
-  var amount = $("#amount").val();
-  var due = $("#dueDate").val();
-  var name = $("#name").val();
+	    <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+	    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	</head>
 
-  // Push a new recommendation to the database using those values
-  tasks.push().set({
-    amount: amount,
-    due: dueDate,
-    name: name
-  });
-};
+	<body>
+		<script src="createTask.js"></script>
 
-// When the window is fully loaded, call this function.
-// Note: because we are attaching an event listener to a particular HTML element
-// in this function, we can't do that until the HTML element in question has
-// been loaded. Otherwise, we're attaching our listener to nothing, and no code
-// will run when the submit button is clicked.
-$(window).load(function () {
+		<div class="content-formbox" id="baseform" style="display:none">
+			<form id="submitTask" class="forms">
+				<p class="text-std">Task Name:<br>
+					<input type="text" id="name" class="input-boxes-std"><br><br>					
+					Amount:<br>
+					<input type="number" id="amount" class="input-boxes-std"><br><br>
+					Due Date:<br>
+					<input type="date" id="dueDate" class="input-boxes-std"><br><br>
+					Due Time:<br>
+					<input type="time" id="time" class="input-boxes-std"><br><br>
+					<button id="submit" onclick="hideFirst()" class="button">Submit</button>
+					<button id="cancel" onclick="hideFirst()" class="button">Cancel</button>
+				</p>
 
-  // Find the HTML element with the id recommendationForm, and when the submit
-  // event is triggered on that element, call submitRecommendation.
-  $("#submitTask").submit(submitTask);
+			</form>
+		</div>
 
-});
+	</body>
+
+</html>
+
+</html>
