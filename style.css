@@ -1,4 +1,4 @@
-input{
+/*input{
     resize: none;
     border-radius: 2px;
     size: 100px;
@@ -32,4 +32,51 @@ input{
 
 #logout-div{
     text-align: center;
+}*/
+
+html body{
+    background-color: #136F63
+}
+
+.content-formbox {
+    background-color:#330077;
+    width:300px;
+    margin: 0 auto;
+    border-radius:25px;
+    border-width:10px;
+    border-style:solid;
+    border-color:#330077
+}
+
+.forms {
+    margin:15px auto;
+    width:200px;
+}
+
+.input-boxes-std {
+    background-color:#000F08;
+    border-color:#000000;
+    color:#FFFFFF;
+    font-family:"Trebuchet MS";
+    height:28px;
+    font-size:14px;
+    margin: 0px auto;
+    width:200px;
+}
+
+.text-std {
+    color:#FFFFFF; 
+    font-family:"Trebuchet MS";
+}
+
+.button {
+    background-color:#000F08;
+    border-color:#000000;
+    color:#FFFFFF;
+    font-family:"Trebuchet MS";
+    border-radius: 0px;
+    margin:30px auto;
+    height: 28px;
+    width: 100px;
+    font-size: 14px;
 }
