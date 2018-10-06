@@ -14,21 +14,21 @@ firebase.initializeApp(config);
 
 
 // Reference to the recommendations object in your Firebase database
-var recommendations = firebase.database().ref("recommendations");
+var tasks = firebase.database().ref("tasks");
 
 // Save a new recommendation to the database, using the input in the form
-var submitRecommendation = function () {
+var submitTask = function () {
 
   // Get input values from each of the form elements
-  var title = $("#talkTitle").val();
-  var presenter = $("#talkPresenter").val();
-  var link = $("#talkLink").val();
+  var amount = $("#amount").val();
+  var due = $("#date").val();
+  var name = $("#name").val();
 
   // Push a new recommendation to the database using those values
-  recommendations.push({
-    "title": title,
-    "presenter": presenter,
-    "link": link
+  tasks.push({
+    "amount": amount,
+    "due": date,
+    "name": name
   });
 };
 
@@ -41,6 +41,6 @@ $(window).load(function () {
 
   // Find the HTML element with the id recommendationForm, and when the submit
   // event is triggered on that element, call submitRecommendation.
-  $("#recommendationForm").submit(submitRecommendation);
+  $("#submitTask").submit(submitTask);
 
 });
