@@ -1,0 +1,35 @@
+input{
+    resize: none;
+    border-radius: 2px;
+    size: 100px;
+    height: 100%;
+}
+
+#main{
+    text-align: center;
+    padding: 20px;
+    border: 1px solid;
+    width: 40%;
+    background-color: darkgrey;
+    background-clip: border-box;
+
+}
+
+.button{
+    color: #ffffff;
+    background-color: darkblue;
+    margin: 10px 2px;
+    border: none;
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px
+}
+
+#login-div{
+    text-align: center;
+}
+
+#logout-div{
+    text-align: center;
+}

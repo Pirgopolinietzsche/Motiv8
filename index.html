@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Motiv8</title>
+		<link rel="stylesheet" type="text/css"href="style.css">
+	</head>
+	<body>
+	 <div id="main">    
+		 <div id="login-div">
+			 <label><b style="font-size: 20px;">Email Address:<input type="text" name="username" id="username"><br>
+			 </label>
+			 <br>
+
+			 <label>Password:<input type="text" name="password" id="password"></label><br>
+
+			 <input type="button" name="login" value="Login" class="button" onclick="login()">
+			 </div>
+
+			 <div id="logout-div">
+			 <p>you are logged in</p>
+			 <input type="button" name="logout" value="Logout" class="button"  onclick="logout()">
+			</div>
+
+			<!-- Firebase stuff -->
+			<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+			<script>
+			  // Initialize Firebase
+			  var config = {
+			    apiKey: "AIzaSyCT_YPaoJrDhHakq7DacUsGJEwXMUimktU",
+			    authDomain: "motiv8-27fda.firebaseapp.com",
+			    databaseURL: "https://motiv8-27fda.firebaseio.com",
+			    projectId: "motiv8-27fda",
+			    storageBucket: "motiv8-27fda.appspot.com",
+			    messagingSenderId: "42771272863"
+			  };
+			  firebase.initializeApp(config);
+			</script>
+			<!-- End of Firebase stuff -->
+
+			<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+			<script src="script.js"></script>
+		</div>    
+	 </body>
+</html>
