@@ -81,8 +81,17 @@ html body{
     font-size: 14px;
 }
 
+.task-contain {
+    background-color: #353535;
+    border: color #000000;
+    border-radius: 5px;
+    width: 800px;
+    margin: 0px auto;
+}
+
 h1 {
     color: #FFFFFF;
     font-family: "Trebuchet MS";
     font-size: 28px;
+    margin: 30px;
 }
