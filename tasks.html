@@ -1,9 +1,17 @@
 <html>
 	<head>
-			<title>Motiv8</title>
-			<link rel="stylesheet" type="text/css"href="style.css">
+		<title>Motiv8</title>
+		<link rel="stylesheet" type="text/css"href="style.css">
+		<!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+    	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    	<!-- Load the Firebase library before loading the body. -->
+	    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+
+	    <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+	    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 	</head>
 	<body>
+		<script src="loadTasks.js"></script>
 		<div id="myDiv">
 			<h1>Your Tasks</h1>
 			<div class="task-contain">
