@@ -13,6 +13,22 @@ var ref = firebase.database().ref("tasks")
 
 ref.on("value", function(snapshot) {
   console.log(snapshot.val());
+  var tasks = snapshot.val();
+  var i = 0;
+  var displayList = document.getElementById("list");
+  snapshot.forEach(function (listOut){
+    var li = document.createElement('li');
+    li.appendChild(document.createTextNode(listOut));
+    displayList.appendChild(li);
+    i++;
+  });
+  /*var name = tasks;
+  var displayList = document.getElementById("list");
+  for (var i = 0; i < tasks.length; i++) {
+      var li = document.createElement('li');
+      li.appendChild(document.createTextNode(tasks[i]));
+      displayList.appendChild(li);
+  }*/
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
