@@ -21,13 +21,13 @@ var submitTask = function () {
 
   // Get input values from each of the form elements
   var amount = $("#amount").val();
-  var due = $("#date").val();
+  var due = $("#dueDate").val();
   var name = $("#name").val();
 
   // Push a new recommendation to the database using those values
-  tasks.push({
+  tasks.push().set({
     "amount": amount,
-    "due": date,
+    "due": dueDate,
     "name": name
   });
 };
