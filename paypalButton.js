@@ -31,7 +31,6 @@ paypal.Button.render({
         return actions.payment.execute().then(function() {
           // Show a confirmation message to the buyer
           window.alert('Thank you for your purchase!');
-          document.querySelector('#test').innerHTML = "Success"
         });
       }
     }, '#paypal-button');
