@@ -80,3 +80,9 @@ html body{
     width: 100px;
     font-size: 14px;
 }
+
+h1 {
+    color: #FFFFFF;
+    font-family: "Trebuchet MS";
+    font-size: 28px;
+}
