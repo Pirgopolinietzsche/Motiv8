@@ -16,12 +16,17 @@ ref.on("value", function(snapshot) {
   var tasks = snapshot.val();
   var displayList = document.getElementById("list");
   snapshot.forEach(function (listOut){
-    var i = 1;
     var li = document.createElement('li');
     var taskComplete = document.createElement("BUTTON");
+    var autoId = taskComplete.getKey();
+    /*taskComplete.addEventListener ("click", function(autoId) {
+      ref.child(autoId).update({
+        "complete": 1
+      });
+    });*/
     var item = listOut.val();
     taskComplete.innerHTML = "Mark complete";
-    taskComplete.setAttribute("onclick", complete(listOut.getKey()));
+    var autoId = listOut.getKey();
     li.innerHTML = "Name: " + item.name + ",  Amount: " + item.amount ;
     var date2 = item.dueDate;
     if (item.dueDate != null && item.dueDate.length == 10) {
@@ -39,13 +44,3 @@ ref.on("value", function(snapshot) {
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
-
-function complete(taskID){
-  var ref = firebase.database().ref("tasks");
-  var toComplete = ref.child(taskID);
-
-  toComplete.update({
-    "complete": 1
-  });
-
-}
