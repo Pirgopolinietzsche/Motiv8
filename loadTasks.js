@@ -20,6 +20,9 @@ ref.on("value", function(snapshot) {
   var items = [];
   var taskInx = Object.keys(tasks);
   console.log(taskInx);
+  while( displayList.firstChild ){
+    displayList.removeChild( displayList.firstChild );
+  }
   snapshot.forEach(function (listOut){
     var li = document.createElement('li');
     var taskComplete = document.createElement("BUTTON");
@@ -39,6 +42,8 @@ ref.on("value", function(snapshot) {
     li.innerHTML = item.name + ". Due: " + date2 + "\t.\t.\t.\t$" + item.amount + " at stake";
     li.style.fontFamily="Trebuchet MS"
     li.style.color = "white";
+    taskComplete.setAttribute("class","button");
+    taskComplete.style.width="150px";
     displayList.appendChild(li);
     displayList.appendChild(taskComplete);
     displayList.appendChild(document.createElement("br"));
