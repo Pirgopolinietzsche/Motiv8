@@ -14,13 +14,13 @@ paypal.Button.render({
       },
       // Set up a payment
       payment: function(data, actions) {
-        var selector = document.querySelector('#select');
-        var selected = selector.options[selector.selectedIndex].value;
-        window.alert(selected)
+        var amount = document.querySelector('#amount');
+        var value = amount.value;
+        window.alert(value);
         return actions.payment.create({
           transactions: [{
             amount: {
-              total: selected,
+              total: value,
               currency: 'USD'
             }
           }]
@@ -31,6 +31,7 @@ paypal.Button.render({
         return actions.payment.execute().then(function() {
           // Show a confirmation message to the buyer
           window.alert('Thank you for your purchase!');
+          document.querySelector('#submit').disabled=false;
         });
       }
     }, '#paypal-button');
