@@ -15,11 +15,20 @@ ref.on("value", function(snapshot) {
   console.log(snapshot.val());
   var tasks = snapshot.val();
   var displayList = document.getElementById("list");
+  var i =0;
+  var buttons = [];
+  var items = [];
+  var taskInx = Object.keys(tasks);
+  console.log(taskInx);
   snapshot.forEach(function (listOut){
     var li = document.createElement('li');
     var taskComplete = document.createElement("BUTTON");
     
+    
     var item = listOut.val();
+    buttons[i] = taskComplete;
+    console.log(i);
+    
     taskComplete.innerHTML = "Mark complete";
     var autoId = listOut.getKey();
     li.innerHTML = "Name: " + item.name + ",  Amount: " + item.amount ;
@@ -34,8 +43,18 @@ ref.on("value", function(snapshot) {
     displayList.appendChild(taskComplete);
     displayList.appendChild(document.createElement("br"));
     displayList.appendChild(document.createElement("br"));
+    i++;
   });
+  console.log(buttons.length == taskInx.length);
+  for (var z = 0; z < buttons.length; z++) {
+    buttons[z].addEventListener("click", function(){
+      ref.child(taskInx[z-3]).update({
+        "complete": 1
+        });
+    });
+    console.log('added action listener to button '+ z);
+  }
   
-}, function (errorObject) {
+  }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });

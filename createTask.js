@@ -11,7 +11,7 @@ var config = {
     messagingSenderId: "42771272863"
 };
 firebase.initializeApp(config);
-
+var i = 0;
 
 // Reference to the recommendations object in your Firebase database
 var tasks = firebase.database().ref("tasks");
@@ -29,8 +29,10 @@ var submitTask = function () {
     "amount": amount,
     "dueDate": dueDate,
     "name": name,
-    "complete": 0
+    "complete": 0,
+    "index": 100
   });
+  i++;
 };
 
 // When the window is fully loaded, call this function.
