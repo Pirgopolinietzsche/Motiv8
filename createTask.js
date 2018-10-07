@@ -28,7 +28,8 @@ var submitTask = function () {
   tasks.push().set({
     "amount": amount,
     "dueDate": dueDate,
-    "name": name
+    "name": name,
+    "complete": 0
   });
 };
 
