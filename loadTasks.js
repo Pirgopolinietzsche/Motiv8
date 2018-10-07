@@ -18,12 +18,7 @@ ref.on("value", function(snapshot) {
   snapshot.forEach(function (listOut){
     var li = document.createElement('li');
     var taskComplete = document.createElement("BUTTON");
-    var autoId = taskComplete.getKey();
-    /*taskComplete.addEventListener ("click", function(autoId) {
-      ref.child(autoId).update({
-        "complete": 1
-      });
-    });*/
+    
     var item = listOut.val();
     taskComplete.innerHTML = "Mark complete";
     var autoId = listOut.getKey();
