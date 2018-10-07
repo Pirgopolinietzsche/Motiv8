@@ -21,7 +21,13 @@ ref.on("value", function(snapshot) {
     var item = listOut.val();
     taskComplete.innerHTML = "Mark complete";
     li.innerHTML = "Name: " + item.name + ",  Amount: " + item.amount ;
-
+    var date2 = item.dueDate;
+    if (item.dueDate != null && item.dueDate.length == 10) {
+      date2 = item.dueDate.substring(5,7) + "-" + item.dueDate.substring(8,10) + "-" + item.dueDate.substring(0,4);
+    }
+    li.innerHTML = item.name + ". Due: " + date2 + "\t.\t.\t.\t$" + item.amount + " at stake";
+    li.style.fontFamily="Trebuchet MS"
+    li.style.color = "white";
     displayList.appendChild(li);
     displayList.appendChild(taskComplete);
     displayList.appendChild(document.createElement("br"));
