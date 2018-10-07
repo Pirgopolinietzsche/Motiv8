@@ -13,6 +13,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     document.getElementById("login-div").style.display="none";
     document.getElementById("logout-div").style.display="block";
+    document.getElementById("current-user").innerHTML = "Logged in as " + user.uid;
   } else {
     // No user is signed in.
     document.getElementById("login-div").style.display="block";
@@ -29,13 +30,12 @@ function login(){
         var errorCode = error.code;
         var errorMessage = error.message;
 
-        window.alert("asd");
-        // ...
+        window.alert("Incorrect email address and/or password");
     });
 
     firebase.auth().onAuthStateChanged(user => {
         if(user) {
-            window.location = 'paypalButton.html'; //After successful login, user will be redirected to home.html
+            window.location = 'tasks.html'; //After successful login, user will be redirected to home.html
         }
     });
 }
