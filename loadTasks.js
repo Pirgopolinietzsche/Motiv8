@@ -17,17 +17,17 @@ ref.on("value", function(snapshot) {
   var displayList = document.getElementById("list");
   snapshot.forEach(function (listOut){
     var li = document.createElement('li');
+    var taskComplete = document.createElement("BUTTON");
     var item = listOut.val();
-    li.innerHTML = "Name: " + item.name + " Amount: " + item.amount;
+    taskComplete.innerHTML = "Mark complete";
+    li.innerHTML = "Name: " + item.name + ",  Amount: " + item.amount ;
+
     displayList.appendChild(li);
+    displayList.appendChild(taskComplete);
+    displayList.appendChild(document.createElement("br"));
+    displayList.appendChild(document.createElement("br"));
   });
-  /*var name = tasks;
-  var displayList = document.getElementById("list");
-  for (var i = 0; i < tasks.length; i++) {
-      var li = document.createElement('li');
-      li.appendChild(document.createTextNode(tasks[i]));
-      displayList.appendChild(li);
-  }*/
+  
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
