@@ -14,13 +14,12 @@ var ref = firebase.database().ref("tasks")
 ref.on("value", function(snapshot) {
   console.log(snapshot.val());
   var tasks = snapshot.val();
-  var i = 0;
   var displayList = document.getElementById("list");
   snapshot.forEach(function (listOut){
     var li = document.createElement('li');
-    li.appendChild(document.createTextNode(listOut));
+    var item = listOut.val();
+    li.innerHTML = "Name: " + item.name + " Amount: " + item.amount;
     displayList.appendChild(li);
-    i++;
   });
   /*var name = tasks;
   var displayList = document.getElementById("list");
