@@ -69,6 +69,11 @@ html body{
     font-family:"Trebuchet MS";
 }
 
+.text-std-dark {
+    color:#000000; 
+    font-family:"Trebuchet MS";
+}
+
 .button {
     background-color:#000F08;
     border-color:#000000;

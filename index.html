@@ -6,31 +6,34 @@
 		<link rel="stylesheet" type="text/css"href="style.css">
 	</head>
 	<body background="images/Background.png">
+	<div id="header-logo">
+		<img src="images/logo-750.png" style="height:80px;width:252px;">
+	</div>
 		<div id= "status">
 			<p><label id="current-user">Not logged in</label></p>
 		</div>
 		<div id="main" class="content-login-formbox">    
 			<div id="login-div" class="forms">
 				<p>
-				<label class= "text-std">Email Address:
+				<label class= "text-std-dark">Email Address:
 					<input type="text" name="username" id="username" class="input-boxes-std">
 				</label>
 				</p>
 
 				<p>
-				<label class = "text-std">Password:
+				<label class = "text-std-dark">Password:
 					<input type="password" name="password" id="password" class="input-boxes-std">
 				</label>
 				</p>
 
 				<input type="button" name="login" value="Login" class="button" onclick="login()">
-				</div>
+			</div>
 
-				<div id="logout-div">
+			<div id="logout-div">
 				<p>You are logged in</p>
 				<input type="button" name="logout" value="Logout" class="button" onclick="logout()">
-				</div>
 			</div>
+		</div>
 			<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
 			<script src="script.js"></script>
 	 </body>
