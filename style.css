@@ -35,17 +35,17 @@
 }*/
 
 html body{
-    background-color: #136F63
+    background-color: #FFFFFF
 }
 
 .content-formbox {
-    background-color:#330077;
+    background-color:#1e378b5d;
     width:300px;
     margin: 0 auto;
     border-radius:25px;
-    border-width:10px;
+    border-width:1px;
     border-style:solid;
-    border-color:#330077
+    border-color: "black";
 }
 
 .forms {
@@ -90,7 +90,7 @@ html body{
 }
 
 h1 {
-    color: #FFFFFF;
+    color: "black";
     font-family: "Trebuchet MS";
     font-size: 28px;
     margin: 30px;
