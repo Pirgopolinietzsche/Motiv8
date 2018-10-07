@@ -46,15 +46,19 @@ ref.on("value", function(snapshot) {
     i++;
   });
   console.log(buttons.length == taskInx.length);
-  for (var z = 0; z < buttons.length; z++) {
-    buttons[z].addEventListener("click", function(){
-      ref.child(taskInx[z-3]).update({
+  taskInx.sort();
+
+  for (let z = 0; z < i; z++) {
+    buttons[z].addEventListener("click", ()=>{
+      console.log("z=" + z);
+      ref.child(taskInx[z]).update({
         "complete": 1
         });
     });
     console.log('added action listener to button '+ z);
+    // z++;
   }
-  
+  z = 0;
   }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
