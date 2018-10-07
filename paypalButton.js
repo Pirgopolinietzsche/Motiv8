@@ -16,7 +16,6 @@ paypal.Button.render({
       payment: function(data, actions) {
         var amount = document.querySelector('#amount');
         var value = amount.value;
-        window.alert(value);
         return actions.payment.create({
           transactions: [{
             amount: {
@@ -28,10 +27,15 @@ paypal.Button.render({
       },
       // Execute the payment
       onAuthorize: function(data, actions) {
+        var amount = document.querySelector('#amount');
+        var value = amount.value;
         return actions.payment.execute().then(function() {
           // Show a confirmation message to the buyer
-          window.alert('Thank you for your purchase!');
-          document.querySelector('#submit').disabled=false;
+          var button = document.querySelector('#submit');
+          var confirmation = document.querySelector('#confirmation');
+          button.disabled=false;
+          button.style.opacity = 1.0;
+          confirmation.innerHTML = "You have pledged " + value + "!";
         });
       }
     }, '#paypal-button');
